@@ -119,16 +119,6 @@
 {%
   \PassOptionsToPackage{AutoFakeBold=2}{xeCJK}
 }%
-% 需要注释掉下面字体设置才能正常显示一些生僻字，如鋆
-% {%
-%   \ifthenelse%
-%   {\equal{\hit@fontset}{siyun}}%
-%   {\relax}%
-%   {%
-%     \PassOptionsToPackage{AutoFakeBold=2}{xeCJK}
-%   }%
-%   \PassOptionsToClass{fontset=\hit@fontset}{ctexbook}
-% }%
 \LoadClass[a4paper,openany,UTF8,zihao=-4,scheme=plain]{ctexbook}
 \ifhit@bachelor\relax\else
   \ifhit@master\relax\else
