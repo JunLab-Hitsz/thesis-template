@@ -25,3 +25,4 @@ dist
 *.fdb_latexmk
 *.fls
 *.gz
+*.ist
