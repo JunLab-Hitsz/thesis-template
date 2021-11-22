@@ -9,6 +9,31 @@
 
 - 修改封面内容，符合2021年要求。[2021论文规范](http://due.hitsz.edu.cn/info/1247/2735.htm)
 
+- 去除页眉
+
+查重时，页眉可能也会出现重复情况，有去除页眉的需求。方法如下:
+注释掉`*.cls`文件中关于页眉的定义部分(约361行附近):
+```
+\fancypagestyle{hit@headings}{%
+    ...
+    \else
+      \ifhit@master
+        \ifhit@harbin
+          \fancyhead[C]{\songti\xiaowu[0]\hit@cschoolname\hit@cdegree\hit@cthesisname}
+        \fi
+        \ifhit@shenzhen
+          \if@mainmatter
+            % 注释如下一行
+            % \fancyhead[C]{\songti\xiaowu[0]\hit@cschoolname\hit@cdegree\hit@cthesisname}
+          \else
+            \fancyhead[C]{\xiaowu[0]\leftmark}
+          \fi
+        \fi
+    ...
+}
+```
+
+
 
 
 # Reference
